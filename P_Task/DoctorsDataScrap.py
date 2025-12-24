@@ -38,7 +38,7 @@ for script in scripts:
                 if item.get("@type") == "Physician":
                     doctors.append({
                         "name": item.get("name"),
-                        "specialty": item.get("medicalSpecialty")
+                        "specialty": item.get("medicalSpecialty"),
                         "phone": item.get("telephone"),
                         "email": item.get("email"),
                         "url": item.get("url"),
