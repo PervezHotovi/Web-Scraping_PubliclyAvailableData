@@ -18,7 +18,7 @@ for script in scripts:
         json_text = script.get_text(strip=True)
         data = json.loads(json_text)
 
-        # Case 1: Single object
+      
         if isinstance(data, dict) and data.get("@type") == "Physician":
             doctors.append({
                 "name": data.get("name"),
@@ -32,15 +32,13 @@ for script in scripts:
                 "description": data.get("description")
             })
 
-        # Case 2: List of objects
+ 
         elif isinstance(data, list):
             for item in data:
                 if item.get("@type") == "Physician":
                     doctors.append({
                         "name": item.get("name"),
-                        "specialty": ", ".join(
-                            s.get("name") for s in item.get("medicalSpecialty", [])
-                        ),
+                        "specialty": item.get("medicalSpecialty")
                         "phone": item.get("telephone"),
                         "email": item.get("email"),
                         "url": item.get("url"),
