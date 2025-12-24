@@ -1,0 +1,5 @@
+# Regex  in pyhton means "Regular Expression" , used to more powerfully for  search , match, extract and replace using patterns instead of using exact wors.
+#It helps when we do not know the exact the words, when you need to pattern based macthing as you want to validate inputs like username, email or phone number or CNIC eyc
+#
+# import re
+# pattern = r"^[a-z 0-9]+@+[a-z]"
